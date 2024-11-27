@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to Frontend</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header>
+            <h1>One Piece of Java Employees</h1>
+            <nav>
+                <ul>
+                    <li><a href="#it">Information Technology</a></li>
+                    <li><a href="#hr">Human Resource</a></li>
+                    <li><a href="#pr">Public Relations</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT-->
+        <main>
+            <!-- IT Section-->
+            <section id="it">
+                <h2>Information Technology</h2>
+                <article class="employee-card">
+                    <img src="../Mark - Frontend/images/boa.jpg" alt="Boa hancock head of IT" width="150" height="150">
+                    <h3>Boa Hancock</h3>
+                    <p><strong>Position: </strong> Head of IT</p>
+                    <p><strong>Email: </strong>boa.hancock@outlook.com</p>
+                    <p><strong>Skills: </strong>    </p>
+                    <ul>
+                        <li>AWS Certified</li>
+                        <li>Leadership</li>
+                        <li>Scrum Master</li>
+                        <li>Full Stack Development</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Human Resource -->
+            <section id="hr">
+                <h2>Human Resource</h2>
+                <article class="employee-card">
+                    <img src="../Mark - Frontend/images/Nami.webp" alt="Nami head of HR" width="150" height="150">
+                    <h3>Nami</h3>
+                    <p><strong>Position: </strong> Head of HR</p>
+                    <p><strong>Email: </strong>nami@outlook.com</p>
+                    <p><strong>Skills: </strong>    </p>
+                    <ul>
+                        <li>Payroll</li>
+                        <li>Leadership</li>
+                        <li>Escalation</li>
+                       
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Human Resource -->
+            <section id="pr">
+                <h2>Public Relation</h2>
+                <article class="employee-card">
+                    <img src="../Mark - Frontend/images/robin.jpg" alt="Robin head of PR" width="150" height="150">
+                    <h3>Nico Robin</h3>
+                    <p><strong>Position: </strong> Head of PR</p>
+                    <p><strong>Email: </strong>nico.robin@outlook.com</p>
+                    <p><strong>Skills: </strong>    </p>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Leadership</li>
+                        <li>Public Speaking</li>
+                       
+                    </ul>
+                    <form action="/contact" method="POST">
+                        <label for="message">Send message to Robin</label><br>
+                        <textarea name="message" id="message" rows="4" cols="30"></textarea><br>
+                        <input type="submit" value="Send Message">
+                    </form>
+                </article>
+            </section>
+
+
+           
+        </main>
+
+                <!-- FOOTER -->
+                <footer>
+                    <p>&copy; One Piece of Java</p>
+                    <address>
+                        National Capital Region<br>
+                        Unit 123 <br>
+                        Las Pinas City
+                    </address>
+                </footer>
+
+    </body>
+</html>
