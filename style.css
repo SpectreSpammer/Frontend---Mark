@@ -1,159 +1,308 @@
-*{
+/* CSS Fundamentals Example
+   1. Selectors and Specificity
+   2. Box Model
+   3. Layout (Flexbox & Grid)
+   4. Responsive Design
+*/
+
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+/* =============== 1. SELECTORS AND SPECIFICITY =============== */
+
+/* Element Selector (Specificity: 0,0,1) */
+body {
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
 }
 
-.employee-card{
+/* Class Selector (Specificity: 0,1,0) */
+.employee-card {
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-#it{
+/* ID Selector (Specificity: 1,0,0) */
+#engineering {
     background-color: #f5f9ff;
 }
 
-.employee-card img{
-   border-radius: 50%;
+/* Descendant Selector */
+.employee-card img {
+    border-radius: 50%;
 }
 
-
-.employee-card:hover{
+/* Pseudo-class Selector */
+.employee-card:hover {
     transform: translateY(-5px);
-    transition: transform 0.3s ease
- }
+    transition: transform 0.3s ease;
+}
 
- header{
+/* =============== 2. BOX MODEL =============== */
+
+header {
+    /* Content padding */
     padding: 20px;
-    border-bottom:  1px solid #eee;
+    /* Border */
+    border-bottom: 1px solid #eee;
+    /* Margin */
     margin-bottom: 30px;
+    /* Width calculation including padding and border */
     width: 100%;
- }
- 
+}
 
- .employee-card{
+.employee-card {
     padding: 20px;
     margin: 15px;
     border: 1px solid #ddd;
+    /* Fixed width with padding and border included */
     width: 300px;
- }
+}
 
- nav ul{
+/* =============== 3. LAYOUT TECHNIQUES =============== */
+
+/* Flexbox Layout */
+nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
     padding: 1rem;
- }
+}
 
- main{
+/* Grid Layout */
+main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
- }
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
- .employee-card{
+/* Flexbox for Employee Cards */
+.employee-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
- }
+}
 
- .employee-card{
+/* =============== 4. RESPONSIVE DESIGN =============== */
+
+/* Base styles (Mobile First) */
+.employee-card {
     width: 100%;
     margin: 10px 0;
- }
+}
 
- /* SCREEN SIZE*/
- @media screen and (min-width: 1024px) {
-    .employee-card{
-        width:  calc(53.333% - 20px);
+/* Media Queries for different screen sizes */
+
+/* Tablet (768px and up) */
+@media screen and (min-width: 768px) {
+    .employee-card {
+        width: calc(50% - 20px);
+        margin: 10px;
     }
 
-    main{
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+    .employee-card {
+        width: calc(53.333% - 20px);
+    }
+
+    main {
         grid-template-columns: repeat(3, 1fr);
     }
+}
 
-    @media screen and (min-width: 1440px){
-        .container{
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+/* Large Desktop (1440px and up) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
     }
- }
+}
 
- /* HEADER */
- header{
+/* Additional Styling for Better Visual Hierarchy */
+
+/* Header Styles */
+header {
     background: #2c3e50;
     color: white;
- }
+}
 
- header h1{
+header h1 {
     font-size: 2rem;
     text-align: center;
- }
+}
 
- nav a{
-    color: white;
+nav a {
+    color: black;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 4px;
- }
+}
 
- nav a:hover{
-    background: rgba(255, 255, 255,0.1);
- }
+nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
 
- /* SECTION */
- section h2{
+/* Section Styles */
+section h2 {
     color: #2c3e50;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
- }
+}
 
- form{
+/* Form Styles */
+form {
     width: 100%;
- }
+}
 
- textarea{
-    width: 100px;
+textarea {
+    width: 100%;
     padding: 10px;
-    margin:  10px 0;
+    margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
- }
+}
 
- input[type="submit"]{
+input[type="submit"] {
     background: #2c3e50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
- }
+}
 
- input[type="submit"]:hover{
-   background: #34495e;
- }
+input[type="submit"]:hover {
+    background: #34495e;
+}
 
- /* FOOTER */
- footer{
+/* Footer Styles */
+footer {
     background: #2c3e50;
     color: white;
     padding: 20px;
     margin-top: 40px;
     text-align: center;
- }
+}
 
- address{
+address {
     margin-top: 10px;
     font-style: normal;
- }
+}
+
+/* Edit Form */
+.edit-btn {
+    background: #2c3e50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: #34495e;
+}
+
+.edit-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn {
+    background: #2ecc71;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #27ae60;
+}
+
+.cancel-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #c0392b;
+}
+
+/* Accessibility Styles */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Dark Mode Support */
+.dark-mode .edit-form {
+    background: #2c2c2c;
+    color: white;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background: #1a1a1a;
+    border-color: #404040;
+    color: white;
+}
